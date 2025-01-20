@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)https://cses.fi/problemset/task/1192 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet " type="text/css" href="./CSES - Counting Rooms_files/cses.css" id="styles">
+  <link rel="stylesheet alternate" type="text/css" href="./CSES - Counting Rooms_files/cses-dark.css" id="styles-dark">
+  <meta name="theme-color" content="white" id="theme-color">
+  <script type="application/json" id="darkmode-enabled">false</script>
+  <script src="./CSES - Counting Rooms_files/ui.js.download"></script>
+  <link rel="stylesheet" type="text/css" href="./CSES - Counting Rooms_files/all.min.css">
+<link rel="stylesheet" type="text/css" href="./CSES - Counting Rooms_files/prettify.css"></head>
+<body class="with-sidebar ">
+  <div class="header">
+    <div>
+      <a href="https://cses.fi/" class="logo"><img src="./CSES - Counting Rooms_files/logo.png" alt="CSES"></a>
+      <a class="menu-toggle" onclick="document.body.classList.toggle(&#39;menu-open&#39;);">
+        <i class="fas fa-bars"></i>
+      </a>
+      <div class="controls">
+                <a class="account" href="https://cses.fi/login">Login</a>
+        <span>—</span>
+                        <a href="https://cses.fi/darkmode" title="Toggle dark mode" onclick="return toggle_theme()"><i aria-label="Dark mode" class="fas fa-adjust"></i><span>Dark mode</span></a>
+              </div>
+    </div>
+  </div>
+  <div class="skeleton">
+
+  <div class="navigation">
+    <div class="title-block">
+      <h3><a href="https://cses.fi/problemset/list/">CSES Problem Set</a></h3>
+      <h1>Counting Rooms</h1>
+<ul class="nav">
+<li><a href="https://cses.fi/problemset/task/1192/" class="current">Task</a></li>
+<li><a href="https://cses.fi/problemset/stats/1192/">Statistics</a></li>
+</ul>
+    </div>
+    <div class="sidebar"></div>
+  </div>
+
+  <div class="content-wrapper">
+
+    <div class="content">
+
+
+<title>CSES - Counting Rooms</title><link rel="stylesheet" href="./CSES - Counting Rooms_files/katex.min.css">
+<script defer="" src="./CSES - Counting Rooms_files/katex.min.js.download"></script>
+<script defer="" src="./CSES - Counting Rooms_files/copy-tex.min.js.download"></script>
+
+<script>
+addEventListener("DOMContentLoaded", function (e) {
+    const mathElements = document.getElementsByClassName("math");
+    const macros = {};
+    for (let element of mathElements) {
+        katex.render(element.textContent, element, {
+            displayMode: element.classList.contains("math-display"),
+            throwOnError: false,
+            globalGroup: true,
+            macros,
+        });
+    }
+});
+</script>
+<ul class="task-constraints">
+<li><b>Time limit:</b> 1.00 s</li>
+<li><b>Memory limit:</b> 512 MB</li>
+</ul>
+<input type="hidden" name="course" value="problemset">
+<input type="hidden" name="task" value="1192">
+<div class="md"><p>You are given a map of a building, and your task is to count the number of its rooms. The size of the map is <span class="math math-inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>×</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">n \times m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.6667em; vertical-align: -0.0833em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right: 0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right: 0.2222em;"></span></span><span class="base"><span class="strut" style="height: 0.4306em;"></span><span class="mord mathnormal">m</span></span></span></span></span> squares, and each square is either floor or wall. You can walk left, right, up, and down through the floor squares.</p>
+<h1 id="input">Input</h1>
+<p>The first input line has two integers <span class="math math-inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span></span> and <span class="math math-inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.4306em;"></span><span class="mord mathnormal">m</span></span></span></span></span>: the height and width of the map.</p>
+<p>Then there are <span class="math math-inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span></span> lines of <span class="math math-inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.4306em;"></span><span class="mord mathnormal">m</span></span></span></span></span> characters describing the map. Each character is either <code>.</code> (floor) or <code>#</code> (wall).</p>
+<h1 id="output">Output</h1>
+<p>Print one integer: the number of rooms.</p>
+<h1 id="constraints">Constraints</h1>
+<ul>
+<li><span class="math math-inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>n</mi><mo separator="true">,</mo><mi>m</mi><mo>≤</mo><mn>1000</mn></mrow><annotation encoding="application/x-tex">1 \le n,m \le 1000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.7804em; vertical-align: -0.136em;"></span><span class="mord">1</span><span class="mspace" style="margin-right: 0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right: 0.2778em;"></span></span><span class="base"><span class="strut" style="height: 0.8304em; vertical-align: -0.1944em;"></span><span class="mord mathnormal">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.1667em;"></span><span class="mord mathnormal">m</span><span class="mspace" style="margin-right: 0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right: 0.2778em;"></span></span><span class="base"><span class="strut" style="height: 0.6444em;"></span><span class="mord">1000</span></span></span></span></span></li>
+</ul>
+<h1 id="example">Example</h1>
+<p>Input:</p>
+<pre>5 8
+########
+#..#...#
+####.#.#
+#..#...#
+########
+</pre>
+<p>Output:</p>
+<pre>3
+</pre></div>    </div>
+    <div class="nav sidebar">
+<h4>Graph Algorithms</h4><a class="current" href="https://cses.fi/problemset/task/1192">Counting Rooms<span class="task-score icon "></span></a><a href="https://cses.fi/problemset/task/1193">Labyrinth<span class="task-score icon "></span></a><a href="https://cses.fi/problemset/task/1666">Building Roads<span class="task-score icon "></span></a><a href="https://cses.fi/problemset/task/1667">Message Route<span class="task-score icon "></span></a><a href="https://cses.fi/problemset/task/1668">Building Teams<span class="task-score icon "></span></a><a href="https://cses.fi/problemset/task/1669">Round Trip<span class="task-score icon "></span></a><a href="https://cses.fi/problemset/task/1194">Monsters<span class="task-score icon "></span></a><a href="https://cses.fi/problemset/task/1671">Shortest Routes I<span class="task-score icon "></span></a>...
+<hr></div></div></div></body></html>

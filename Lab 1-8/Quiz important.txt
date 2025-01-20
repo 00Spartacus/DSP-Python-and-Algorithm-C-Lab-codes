@@ -1,0 +1,7 @@
+Graph er edge cost /weight + 1 hole
+shortest path change hobe kina?
+
+Kono problem set e kono task er prerequisite thakle 
+kibhabe eta alter korbo
+
+Topological graph e keno DAG(Directed Acyclic Graph) lagbe
